@@ -10,7 +10,7 @@ function App() {
     <>
       <center>
         <h1 className='py-2 pt-3'>App using Vite with Bootstrap</h1>
-        <Cards />
+        <Cards title="Beautiful view" />
       </center>
     </>
   )
