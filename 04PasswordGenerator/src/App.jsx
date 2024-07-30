@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
@@ -27,6 +27,13 @@ function App() {
     generatePass()
   }, [length, numbers, characters])
 
+  const copyPass = () => {
+    window.navigator.clipboard.writeText(password)
+    passRef.current.select()
+  }
+
+  const passRef = useRef(null)
+
   return (
     <>
       <div className="con w-100 ">
@@ -36,19 +43,21 @@ function App() {
           <h4 className='pt-5 pb-3 text-light text-center'>Password Generator</h4>
 
             {/* password box */}
-            <div className="pass-box d-flex ">
+            <div className="pass-box d-flex flex-md-row flex-column">
               <input type="text" 
               placeholder='Password'
-               className='bg-white p-1 border-0 w-100 ps-3 rounded-start-3' 
+               className='bg-white p-1 border-0 w-100 ps-3 rounded-start-3 ' 
                value={password} 
+               ref={passRef}
                />
               <button 
-              className=' p-1 px-4 border-0 bg-primary text-light fw-bold rounded-end-3'>Copy
+              className=' p-1 px-4 border-0 bg-primary text-light fw-bold rounded-end-3'
+              onClick={copyPass}>Copy
               </button>
             </div>
 
             {/* options */}
-            <div className="opt d-flex gap-3 mt-2 align-items-center">
+            <div className="opt d-flex flex-md-row flex-column gap-3 mt-2 align-items-center w-md-50">
               {/* length range */}
               <div className='d-flex align-items-center'>
                 <input 
