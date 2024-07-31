@@ -44,15 +44,15 @@ function App() {
 
             {/* password box */}
             <div className="pass-box d-flex flex-md-row flex-column">
-              <input type="text" 
-              placeholder='Password'
-               className='bg-white p-1 border-0 w-100 ps-3 rounded-start-3 ' 
-               value={password} 
-               ref={passRef}
+                <input type="text" 
+                placeholder='Password'
+                className='bg-white p-1 border-0 w-100 ps-3 rounded-start-3 ' 
+                value={password} 
+                ref={passRef}
                />
               <button 
-              className=' p-1 px-4 border-0 bg-primary text-light fw-bold rounded-end-3'
-              onClick={copyPass}>Copy
+                className=' p-1 px-4 border-0 bg-primary text-light fw-bold rounded-end-3'
+                onClick={copyPass}>Copy
               </button>
             </div>
 
@@ -61,17 +61,17 @@ function App() {
               {/* length range */}
               <div className='d-flex align-items-center'>
                 <input 
-                type="range"
-                value={length}
-                min={6}
-                max={50}
-                className='bg-info mt-1 ms-lg-3' 
-                onChange={(e) => {changeLength(e.target.value)}}
+                  type="range"
+                  value={length}
+                  min={6}
+                  max={50}
+                  className='bg-info mt-1 ms-lg-3' 
+                  onChange={(e) => {changeLength(e.target.value)}}
                 />
                 <label 
-                htmlFor="length"
-                className='text-warning ms-1'>
-                Length: {length}
+                  htmlFor="length"
+                  className='text-warning ms-1'>
+                  Length: {length}
                 </label>
               </div>
 
@@ -79,38 +79,40 @@ function App() {
               {/* numbers */}
               <div className='d-flex align-items-center'>
                 <input 
-                type="checkbox"
-                defaultChecked={numbers}
-                onChange={() => {
-                    setNumbers((prev) => !prev)
+                  type="checkbox"
+                  defaultChecked={numbers}
+                  onChange={() => {
+                      setNumbers((prev) => !prev)
                   }
                 }
-                className='mt-1'
-                name="" 
-                id="" />
+                  className='mt-1'
+                  name="" 
+                  id=""
+                 />
                 <label 
-                htmlFor="Numbers"
-                className='text-warning ps-1'>
-                Numbers
+                  htmlFor="Numbers"
+                  className='text-warning ps-1'>
+                  Numbers
                 </label>
               </div>
 
               {/* characters */}
               <div className='d-flex align-items-center'>
                 <input 
-                type="checkbox"
-                defaultChecked={characters}
-                onChange={() => {
-                    setChar((prev) => !prev)
+                  type="checkbox"
+                  defaultChecked={characters}
+                  onChange={() => {
+                      setChar((prev) => !prev)
+                    }
                   }
-                }
-                className='mt-1'
-                name="" 
-                id="" />
+                  className='mt-1'
+                  name="" 
+                  id=""
+                />
                 <label 
-                htmlFor="Characters"
-                className='text-warning ps-1'>
-                Characters
+                  htmlFor="Characters"
+                  className='text-warning ps-1'>
+                  Characters
                 </label>
               </div>
 
